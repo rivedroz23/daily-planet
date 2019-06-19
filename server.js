@@ -84,7 +84,7 @@ app.put('/articles/:id', function(req,res) {
     articleData[id].name = req.body.articleTitle;
     articleData[id].type = req.body.articleBody;
     fs.writeFileSync('./articles.json', JSON.stringify(articleData));
-    res.redirect('/dinosaurs/' + id);
+    res.redirect('/articles/' + id);
 })
 
 
