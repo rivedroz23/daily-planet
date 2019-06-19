@@ -81,8 +81,8 @@ app.put('/articles/:id', function(req,res) {
     let dinosaurs = fs.readFileSync('./articles.json');
     let dinoData = JSON.parse(dinosaurs);
     var id = parseInt(req.params.id);
-    dinoData[id].name = req.body.articleTitle;
-    dinoData[id].type = req.body.articleBody;
+    articleData[id].name = req.body.articleTitle;
+    articleData[id].type = req.body.articleBody;
     fs.writeFileSync('./articles.json', JSON.stringify(articleData));
     res.redirect('/dinosaurs/' + id);
 })
