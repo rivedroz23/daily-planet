@@ -78,8 +78,8 @@ app.post('/articles', function(req,res) {
 });
 
 app.put('/articles/:id', function(req,res) {
-    let dinosaurs = fs.readFileSync('./articles.json');
-    let dinoData = JSON.parse(dinosaurs);
+    let articles = fs.readFileSync('./articles.json');
+    let articleData = JSON.parse(articles);
     var id = parseInt(req.params.id);
     articleData[id].name = req.body.articleTitle;
     articleData[id].type = req.body.articleBody;
